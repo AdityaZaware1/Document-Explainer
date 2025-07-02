@@ -1,13 +1,13 @@
 server:
   port: 9090
 
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/document_explainer
-    username: root
-    password: ab12+-34
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/document_explainer
+#    username: root
+#    password: ab12+-34
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
 
