@@ -9,4 +9,6 @@ public interface DocumentService {
 
     Document getDocumentByUserId(Long id);
 
+    Document getDocument(Long id);
+
 }

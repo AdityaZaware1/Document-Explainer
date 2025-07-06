@@ -10,4 +10,6 @@ public interface DocumentRepo extends JpaRepository<Document, Long> {
 
     Document findDocumentsByUserId(Long userId);
 
+
+    Optional<Document> findTopByUserIdOrderByCreatedAtDesc(Long userId);
 }

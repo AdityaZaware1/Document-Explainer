@@ -38,6 +38,11 @@ public class UserController {
 
     @GetMapping("/getDocument/{userId}")
     public ResponseEntity<Document> getDocumentByUserId(@PathVariable Long userId) {
-        return ResponseEntity.ok(documentService.getDocumentByUserId(userId));
+        return ResponseEntity.ok(documentService.getDocument(userId));
+    }
+
+    @GetMapping("/getUser/{userId})")
+    public ResponseEntity<Document> getDocument(@PathVariable Long userId) {
+        return ResponseEntity.ok(documentService.getDocument(userId));
     }
 }
