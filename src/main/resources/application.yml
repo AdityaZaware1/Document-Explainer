@@ -12,7 +12,9 @@ spring:
       ddl-auto: update
     show-sql: true
 
-
+  ai:
+    openai:
+      api-key: sk-9B4y9XK1mK2lQ4oE2pT3oF6oB7oR8oA1
 
 files:
   documents: documents/
