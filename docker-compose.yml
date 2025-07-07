@@ -1,0 +1,37 @@
+services:
+
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: document_explainer
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  document-explainer:
+    container_name: document-explainer
+    image: adityazaware/document_explainer:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    networks:
+      - document-explainer
+    environment:
+      SPRING_PROFILES_ACTIVE: test
+      DATABASE_URL: jdbc:mysql://mysql:3306/document_explainer
+      DATABASE_USERNAME: user
+      DATABASE_PASSWORD: root
+
+
+volumes:
+  mysql-data:
+
+networks:
+  document-explainer:
+    driver: bridge
